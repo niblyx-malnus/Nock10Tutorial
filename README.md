@@ -96,7 +96,7 @@ Excellent. We have started to simplify our expression. We now have:
 
 `*[a 6 b c d] == *[a *[[c d] 0 *[[2 3] *[a x]]]]`
 
-Hopefully you see how can we can repeat this process. Let's look at `*[[2 3] *[a x]]`. This has nested expression evaluations. This suggests Nock 2. For Nock 2, we want to get our expression in the form `*[*[a m] *[a n]]`. (This looks like what we did in our first step, but don't be fooled. In the first step we were building a cell. In this step, we are building an expression evaluation.) Notice that `[2 3] == *[a 1 2 3]`. This gives us:
+Hopefully you see how can we can repeat this process. Let's look at `*[[2 3] *[a x]]`. This has nested expression evaluations. This suggests Nock 2. For Nock 2, we want to get our expression in the form `*[*[a m] *[a n]]` so that we can recover the original expression `*[a 2 m n]`. (This looks like what we did in our first step, but don't be fooled. In the first step we were building a cell. In this step, we are building an expression evaluation.) Notice that `[2 3] == *[a 1 2 3]`. This gives us:
 
 `*[[2 3] *[a x]] == *[*[a 1 2 3] *[a x]] == *[a 2 [1 2 3] x]`
 
