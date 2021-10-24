@@ -198,7 +198,7 @@ Let's define `#` as a function of three inputs, `x`, `y`, and `z`. This says rep
 
 What are we doing here? Let's first note that there is really no way for us to "edit" a noun. Really what we are doing is producing a new noun which is exactly the same as the old noun except in the specified way. If `x` is `1`, we are slotting into the root address of the noun `z` and replacing it with `y`, so we can get our "edited" noun simply by returning `y`. For any `x` greater than `1`, however, we have to create an entirely new noun. But creating complex nouns from scratch is hard. Creating a single _cell_, on the other hand, is easy.
 
-To make this easier to understand, let's say `v := /[x z]`. `v` is the noun we will be replacing with `y`; the current occupant of slot `x` in noun `z`.  This noun `v` has a "sibling noun" which we will call `w`. `v` is either the head or the tail of its "parent noun." Below, we diagram the two possible cases.
+To make this easier to understand, let's say `v := /[x z]`. `v` is the noun we will be replacing with `y`; the current occupant of slot `x` in noun `z`.  This noun `v` has a "sibling noun" which we will call `w`. `v` is either the head or the tail of its "parent noun" `u`. Below, we diagram the two possible cases.
 
 ```
       z              z
