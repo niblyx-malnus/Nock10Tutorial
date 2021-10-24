@@ -735,7 +735,7 @@ We can now rewrite this as:
 
 And that's it. Congratulations! You have now derived all the Nock opcodes from 6 to 11 using only opcodes 0 through 5. What you will accomplish with this knowledge, I tremble to imagine.
 
-#### Nock 10 Primitive Equivalent
+### Nock 10 Primitive Equivalent
 ```
 *[a 10 [b c] d] ==
 
