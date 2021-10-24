@@ -162,7 +162,7 @@ Even though we don't need Nock 11 to build Nock 10, for the sake of our collecti
 
 The hint provided by this code is used in the process of jetting. In the first case, an atomic tag `b` is provided and a formula `c` is used to compute additional hint information on the subject. `d` is the formula we are actually trying to compute. In the second case, only the atomic tag `b` is passed and `c` is the formula we are actually trying to compute.
 
-It is tempting to try  to reduce the first case to `*[a d]` in the first case. However, this reduction is incorrect. You may have a case where `*[a c]` crashes but `*[a d]` does not. In this case, a correct interpreter will crash the whole expression if `*[a c]` crashes, whereas an incorrect interpreter will proceed with `*[a d]`.
+It is tempting to try  to reduce the first case to `*[a d]`. However, this reduction is incorrect. You may have a case where `*[a c]` crashes but `*[a d]` does not. In this case, a correct interpreter will crash the whole expression if `*[a c]` crashes, whereas an incorrect interpreter will proceed with `*[a d]`.
 
 `*[a 11 [b c] d] == *[[*[a c] *[a d]] 0 3]`  
 `== *[*[a c d] *[a 1 0 3]]`  
