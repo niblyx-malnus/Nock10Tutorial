@@ -83,7 +83,7 @@ To convert this to a single noun is straight-forward enough, but it's a bit of a
 
 `*[a 6 b c d] == *[a *[[c d] 0 *[[2 3] 0 *[a 4 4 b]]]]`
 
-
+#### Deriving `*[a x] == [0 *[a 4 4 b]]`
 Let's start at the end. In order to construct `[0 *[a 4 4 b]]` on subject `a`, let's notice that it is a cell. When trying to construct a cell with respect to a subject `a` we want to put it in the form `[*[a m] *[a n]]` so that we can recover the original expression `*[a m n]`. The tail of our cell is already in the form `*[a n]`. So how about the head? `*[a 1 0] == 0`. So we can write: 
 
 `[0 *[a 4 4 b]] == [*[a 1 0] *[a 4 4 b]] == *[a [1 0] 4 4 b]`
@@ -96,6 +96,7 @@ Excellent. We have started to simplify our expression. We now have:
 
 `*[a 6 b c d] == *[a *[[c d] 0 *[[2 3] *[a x]]]]`
 
+#### Deriving `*[a y] == *[2 3] *[a x]]`
 Hopefully you see how can we can repeat this process. Let's look at `*[[2 3] *[a x]]`. This has nested expression evaluations. This suggests Nock 2. For Nock 2, we want to get our expression in the form `*[*[a m] *[a n]]` so that we can recover the original expression `*[a 2 m n]`. (This looks like what we did in our first step, but don't be fooled. In the first step we were building a cell. In this step, we are building an expression evaluation.) Notice that `[2 3] == *[a 1 2 3]`. This gives us:
 
 `*[[2 3] *[a x]] == *[*[a 1 2 3] *[a x]] == *[a 2 [1 2 3] x]`
@@ -108,6 +109,7 @@ We now have:
 
 `*[a 6 b c d] == *[a *[[c d] 0 *[a y]]]`
 
+#### Deriving `*[a z] == [[c d] 0 *[a y]]`
 Let's look at `[0 *[a y]]`. Another cell. We know what to do here.
 
 `[0 *[a y]] == [*[a 1 0] *[a y]] == *[a [1 0] y]`
@@ -137,6 +139,7 @@ Finally, we have:
 
 `*[a 6 b c d] == *[a 2 [0 1] z]`
 
+#### Substituting Back In
 And that's the whole expression. Let's substitute back in:
 
 `*[a 2 [0 1] z] == *[a 2 [0 1] 2 [1 c d] [1 0] y]`
