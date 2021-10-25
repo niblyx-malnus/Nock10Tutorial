@@ -8,7 +8,7 @@ Nock 10 is not expressed in this way, however. It is expressed in terms of the `
 
 `*[a 10 [b c] d] ==  #[b *[a c] *[a d]]`
 
-I have heard it speculated that Nock 10 cannot be expressed using Nocks 0 through 5. I myself have entertained this thought. However, this is impossible! Nocks 0 through 5 are Turing-complete! We must be able to construct Nock 10 with these rules alone. In fact, we have a hint as to how to do so in the definition of the `#` hax edit operator:
+I have heard it [speculated](https://www.youtube.com/watch?app=desktop&t=25m53s&v=H4EHy-DfiGY&feature=youtu.be%3Ft%3D25m53s) that Nock 10 cannot be expressed using Nocks 0 through 5. I myself have entertained this thought. However, this is impossible! Nocks 0 through 5 are Turing-complete! We must be able to construct Nock 10 with these rules alone. In fact, we have a hint as to how to do so in the definition of the `#` hax edit operator:
 
 `#[1 a b] ============ a`  
 `#[(a + a) b c] ====== #[a [b /[(a + a + 1) c]] c]`  
