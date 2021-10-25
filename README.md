@@ -890,4 +890,4 @@ And that's it. Congratulations! You have now derived all the Nock opcodes from 6
 ]
 ```
 
-<sup>1</sup> It goes without saying that this was a momentary slip of the tongue. ~rovnys-ricfer's "Urbit From the Outside In" is an excellent and highly recommended series.
+<sup>1</sup> It goes without saying that this was a momentary slip of the tongue. The point is only that it is an easy mistake to make. ~rovnys-ricfer's "Urbit From the Outside In" is an excellent and highly recommended series.
