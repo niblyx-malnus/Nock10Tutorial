@@ -14,7 +14,9 @@ I have heard it [speculated](https://www.youtube.com/watch?app=desktop&t=25m53s&
 `#[(a + a) b c] ====== #[a [b /[(a + a + 1) c]] c]`  
 `#[(a + a + 1) b c] == #[a [/[(a + a) c] b] c]`  
 
-That's right! We have the `#` hax edit operator recursively defined in terms of our `/` fas slot operator, whose effect we can reproduce with real Nock code using Nock 0. As long as we have a way to keep track of whether `a` is odd or even, we should be able to write this code in simple Nock. We will use this insight to create our own Nock 10 from scratch. This process will be easier using Nocks 6, 7, 8, and 9, however. So let us convince ourselves that these can be expressed as nouns composed of only Nocks 0 through 5.
+That's right! We have the `#` hax edit operator recursively defined in terms of our `/` fas slot operator, whose effect we can reproduce with real Nock code using Nock 0. As long as we have a way to keep track of whether `a` is odd or even, we should be able to write this code in simple Nock. We will use this insight to create our own Nock 10 from scratch. 
+
+This process will be easier using Nocks 6, 7, 8, and 9, however. So let us convince ourselves that these can be expressed as nouns composed of only Nocks 0 through 5.
 
 ## Nock 7
 We  will start with Nock 7 because it is the easiest:
