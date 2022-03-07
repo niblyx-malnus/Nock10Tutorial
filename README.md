@@ -741,7 +741,7 @@ And that's it. Congratulations! You have now derived all the Nock opcodes from 6
 ```
 *[a 10 [b c] d] ==
 
-[ 2
+*[a 2
   [[1 b] c d]
   1
   2
