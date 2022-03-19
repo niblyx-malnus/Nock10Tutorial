@@ -68,6 +68,20 @@ Much of the work here is already done for us. We have a formula `[2 [0 1] 0 b]` 
 ### Nock 9 Primitive Equivalent
 `*[a 9 b c] == *[a 2 c 1 2 [0 1] 0 b]`
 
+As an aside, we can note that the Nock 9 is defined in terms of a combination of pseudocode operators and Nock opcodes. We can also go the other way to see what Nock 9 looks like in pure pseudocode operators.
+
+```
+*[a 9 b c]
+== *[*[a c] 2 [0 1] 0 b]
+== *[*[*[a c] 0 1] *[*[a c] 0 b]]
+== *[*[a c] /[b *[a c]]]
+```
+
+### Nock 9 Pseudocode Operator Equivalent
+```
+*[a 9 b c] == *[*[a c] /[b *[a c]]]
+```
+
 ## Nock 6
 ### Explaining Nock 6
 Okay. Of all the opcodes so far, Nock 6 is the most complex. It is the if-then-else operator in Nock. It takes a function `b` which computes a loobean `*[a b]` on subject `a` and returns `*[a c]` if the loobean is yes (`0`) and `*[a d]` if the loobean is no (`1`).
@@ -155,6 +169,31 @@ This is Nock 6 written with only Nock 0 through 5.
 ### Nock 6 Primitive Equivalent
 `*[a 6 b c d] == *[a 2 [0 1] 2 [1 c d] [1 0] 2 [1 2 3] [1 0] 4 4 b]`
 
+As an aside we can notice that Nock 6 (like Nock 9) is defined as a combination of pseudocode operators and Nock opcodes. We can also go the other way to see what Nock 9 looks like in pure pseudocode operators.
+
+```
+*[a 6 b c d]
+== *[a *[[c d] 0 *[[2 3] 0 *[a 4 4 b]]]]
+== *[a *[[c d] 0 *[[2 3] 0 ++*[a b]]]]
+== *[a *[[c d] 0 /[++*[a b] [2 3]]]]
+== *[a /[/[++*[a b] [2 3]] [c d]]]
+```
+
+### Nock 6 Pseudocode Operator Equivalent
+`*[a 6 b c d] == *[a /[/[++*[a b] [2 3]] [c d]]]`
+
+This is not quite as intuitive as the Nock 9 pseudocode operator equivalent. The definition of Nock 6 is mostly to demonstrate the very cool fact that a branching operation can be derived using only the fundamental operators `*`, `/` and `+`. But we can also look at Nock 6 another way by introducing (in our own mental fork of the Nock spec) a new pseudocode operater `<`.
+
+```
+<[0 a b]          a
+<[1 a b]          b
+<a                <a
+
+*[a 6 b c d]      <[*[a b] *[a c] *[a d]]
+```
+
+This is equivalent to the original definition. Like `#`, this pseudocode operator is not required for Turing completeness. `*`, `?`, `+`, `=`, and `/` are enough for this. 
+
 ## Nock 11
 
 Even though we don't need Nock 11 to build Nock 10, for the sake of our collective OCD, let's note that Nock 11 can also trivially be written as a noun. The definition of Nock 11 is:
@@ -177,7 +216,11 @@ to compute `*[a c]`.
 
 ### Nock 11 Primitive Equivalent
 `*[a 11 [b c] d] == *[a 2 [c d] 1 0 3]`  
-`*[a 11 b c] ====== *[a 2 [0 1] 1 c]`  
+`*[a 11 b c] ====== *[a 2 [0 1] 1 c]`
+
+### Nock 11 Pseudocode Operator Equivalent
+`*[a 11 [b c] d] == /[3 [*[a c] *[a d]]]`  
+`*[a 11 b c] ====== *[a c]`
 
 ## Finally: Nock 10
 For convenience, let's restate Nock 10 and the `#` hax edit operator.
