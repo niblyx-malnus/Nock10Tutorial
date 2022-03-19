@@ -184,6 +184,7 @@ As an aside we can notice that Nock 6 (like Nock 9) is defined as a combination 
 
 This is not quite as intuitive as the Nock 9 pseudocode operator equivalent. The definition of Nock 6 is mostly to demonstrate the very cool fact that a branching operation can be derived using only the fundamental operators `*`, `/` and `+`. But we can also look at Nock 6 another way by introducing (in our own mental fork of the Nock spec) a new pseudocode operater `<`.
 
+### Nock 6 New Pseudocode Operator Equivalent
 ```
 <[0 a b]          a
 <[1 a b]          b
